@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classmate Edit</title>
+<style>
+body {
+background-image: url('https://wallpapers.com/images/featured/classroom-47m0khjt8s0p7c2s.jpg');
+background-size: cover;
+font-family: 'Arial', sans-serif; /* Change the font-family as needed */
+color: #333; /* Text color */
+margin: 0;
+padding: 0;
+}
+h1 {
+background-color: #eee; /* Header background color */
+padding: 10px;
+}
+form {
+max-width: 400px; /* Adjust the maximum width as needed */
+margin: 20px auto;
+background-color: #fff; /* Form background color */
+padding: 20px;
+border-radius: 10px; /* Rounded corners */
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow */
+}
+input[type="submit"] {
+background-color: #007BFF; /* Submit button background color */
+color: #fff; /* Submit button text color */
+padding: 10px 15px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+input[type="submit"]:hover {
+background-color: #0056b3; /* Hover color for the submit button */
+}
+</style>
+</head>
+<body>
+<h1>Classmate Edit</h1>
+<form method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Submit" />
+</form>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classmates</title>
+<style>
+body {
+background-image: url('https://wallpapers.com/images/featured/classroom-47m0khjt8s0p7c2s.jpg');
+background-size: cover;
+font-family: 'Arial', sans-serif; /* Change the font-family as needed */
+color: #333; /* Text color */
+margin: 0;
+padding: 0;
+}
+h1 {
+background-color: #eee; /* Header background color */
+padding: 10px;
+}
+table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
+}
+th, td {
+padding: 10px;
+border: 1px solid #ddd; /* Table border color */
+}
+a {
+text-decoration: none;
+color: #007BFF; /* Link color */
+}
+a:hover {
+text-decoration: underline;
+}
+a.new-link {
+display: block;
+margin-top: 20px;
+padding: 10px;
+background-color: #28a745; /* New link background color */
+color: #fff; /* New link text color */
+text-align: center;
+text-decoration: none;
+}
+</style>
+</head>
+<body>
+<h1>Classmates</h1>
+<table border="1">
+<thead>
+<tr>
+<th>Firstname</th>
+<th>Lastname</th>
+<th>Age</th>
+<th>Address</th>
+<th>Gender</th>
+<th>View</th>
+<th>Edit</th>
+<th>Delete</th>
+</tr>
+</thead>
+<tbody>
+{% for classmate in object_list %}
+<tr>
+<td>{{ classmate.firstname }}</td>
+<td>{{ classmate.lastname }}</td>
+<td>{{ classmate.age }}</td>
+<td>{{ classmate.address }}</td>
+<td>{{ classmate.gender }}</td>
+<td><a href="{% url "classmate_view" classmate.id %}">view</a></td>
+<td><a href="{% url "classmate_edit" classmate.id %}">edit</a></td>
+<td><a href="{% url "classmate_delete" classmate.id %}">delete</a></td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<a href="{% url "classmate_new" %}" class="new-link">New</a>
+</body>
+</html>

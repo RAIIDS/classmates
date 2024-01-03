@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classmate Details</title>
+<style>
+body {
+background-image: url('https://wallpapers.com/images/featured/classroom-47m0khjt8s0p7c2s.jpg');
+background-size: cover;
+font-family: 'Arial', sans-serif; /* Change the font-family as needed */
+color: #333; /* Text color */
+margin: 0;
+padding: 0;
+}
+h1, h2 {
+background-color: #eee; /* Header background color */
+padding: 10px;
+}
+h2 {
+margin-top: 10px;
+}
+p {
+margin: 10px 0;
+}
+</style>
+</head>
+<body>
+<h1>Classmate Details</h1>
+<h2>Name: {{ object.firstname }} {{ object.lastname }}</h2>
+<p>Age: {{ object.age }}</p>
+<p>Address: {{ object.address }}</p>
+<p>Gender: {{ object.gender }}</p>
+</body>
+</html>
